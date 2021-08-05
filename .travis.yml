@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t yubinqiu1101/fake .
+
+script:
+  - docker run yubinqiu1101/fake npm run test -- --coverage
